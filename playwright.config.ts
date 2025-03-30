@@ -8,7 +8,7 @@ export default defineConfig({
     },
     retries: 2,
     use: {
-        headless: false,
+        headless: true,
         viewport: { width: 1280, height: 720 },
         actionTimeout: 10000,
         baseURL: 'https://www2.destinationgotland.se/en/accommodation',
