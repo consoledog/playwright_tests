@@ -1,0 +1,24 @@
+{
+  "name": "destinationgotland",
+  "version": "1.0.0",
+  "description": "Playwright project for destinationgotland website",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },  
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.51.1",
+    "@types/node": "^22.13.14"
+  },
+  "dependencies": {
+    "typescript": "^5.8.2"
+  }
+}
