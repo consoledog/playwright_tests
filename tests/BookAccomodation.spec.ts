@@ -11,11 +11,15 @@ import { CONFIG } from '../config/config';
 import { BookData } from '../utils/BookData';
 
 test.describe('Home Page Tests', () => {
+    /* Tests related to booking accomodations */
+
     let homePage: HomePage;
     let searchBookPage: SearchBookPage;
     let extrasPage: ExtrasPage;
     let basketPage: BasketPage;
     let searchAndBookPage: SearchAndBookPage;
+    const ACCOMODATION_ID = 0;
+    const BOOKING_ALTERNATIVE_ID = 0;
 
     test.beforeEach(async ({ page }) => {
         homePage = new HomePage(page);
@@ -32,6 +36,7 @@ test.describe('Home Page Tests', () => {
              to book the first appartment that is depicted on  the list 
     */
     test('Book the first appartment for tomorrow, 2 adults', async ({ page }) => {
+        /* 0) Initialze input, and output book data that will be compared at the end of the test */
         const inputBookData = new BookData("", "", "", 0, 0, 0);
         let outputBookData = new BookData("", "", "", 0, 0, 0);
 
@@ -47,12 +52,12 @@ test.describe('Home Page Tests', () => {
         /* 4) Search for the results, and fill input bookData class with booking data */
         await searchBookPage.searchResults();
         await searchAndBookPage.readSearchData(inputBookData);
-        await homePage.readAppartmentTitle(0, inputBookData)
+        await homePage.readAccomodationTitle(ACCOMODATION_ID, inputBookData)
 
         /* 5) Click on "Book" on first hotel to book, and select first booking alternative */
-        await homePage.clickOnHotel(0, 0);
+        await homePage.clickOnAccomodation(ACCOMODATION_ID, BOOKING_ALTERNATIVE_ID);
 
-        /* 7) In Extras for your accomodation click "Continue"  */
+        /* 7) In Extras page (if exists) for your accomodation click "Continue"  */
         await extrasPage.clickContinue();
 
         /* 8) Assert next: In "You have selected" area, there should be booked hotel  */

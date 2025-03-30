@@ -6,7 +6,7 @@ export default defineConfig({
     expect: {
         timeout: 5000
     },
-    retries: 3,
+    retries: 2,
     use: {
         headless: false,
         viewport: { width: 1280, height: 720 },
