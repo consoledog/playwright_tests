@@ -32,10 +32,10 @@ test.describe('Home Page Tests', () => {
         await homePage.clickAcceptCookies();
     });
 
-    /* Test: Idea of this test is to search for an appartments for "Tomorrow" and "2 adults", and 
-             to book the first appartment that is depicted on  the list 
+    /* Test: Idea of this test is to search for an acoomodation for "tomorrow" and "2 adults", and 
+             to book the first accomodation that is depicted on the list 
     */
-    test('Book the first appartment for tomorrow, 2 adults', async ({ page }) => {
+    test('Book the first accomodation for tomorrow, 2 adults', async ({ page }) => {
         /* 0) Initialze input, and output book data that will be compared at the end of the test */
         const inputBookData = new BookData("", "", "", 0, 0, 0);
         let outputBookData = new BookData("", "", "", 0, 0, 0);
