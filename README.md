@@ -1,5 +1,9 @@
 1. Clone the repository
 2. Install playwright and all playwright browsers
+3. Install node dependecies
+    ```bash
+    npm install
+    ```
 3. Run the project by using
    ```bash
    npm test
